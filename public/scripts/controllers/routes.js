@@ -9,6 +9,7 @@ page('/*', (ctx, next) => {
 })
 
 page('/', app.bookListPage.init)
+page('/admin', app.adminPage.init)
 page('/book-detail-page/:id', (ctx) =>{
     app.Book.fetchOne(ctx.params.id).then( (book)=>{
         console.log('book',book);

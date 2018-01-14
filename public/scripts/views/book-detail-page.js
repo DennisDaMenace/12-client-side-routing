@@ -41,6 +41,14 @@ var app = app || {};
       const book_id = $(event.target).data('book_id')
       page('/book-edit-page/' + book_id)
     })
+    if ('yes' === localStorage.getItem('validated')) {
+        console.log('Login Success')
+        localStorage.setItem('validated', 'yes')
+        $('.update-book, .delete-book, .new-book').show();
+      } else {
+          $('.update-book, .delete-book, .new-book').hide();
+          localStorage.setItem('validated', 'no')
+      }
   }
         
   module.bookDetailPage = bookDetailPage
