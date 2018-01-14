@@ -1,3 +1,5 @@
+'use strict';
+
 var app = app || {};
 (module => {
 
@@ -5,16 +7,15 @@ var app = app || {};
 
     const markup = `
             <div class="book-pages">
-                <div >
-                    <div >
+                <div>
+                    <div>
                         <img src="{{{image_url}}}" alt="" width="400">
                     </div>
-                    <hr>
                     <div class="attribution">
                         <h1>
-                            <a href="/book-detail-page/{{book_id}}" >{{title}}</a>
+                            <a href="/book-detail-page/{{book_id}}">{{title}}</a>
                         </h1>
-                        <h2> by {{author}} </h2>
+                        <h2 class="attribution-author"> by {{author}} </h2>
                     </div>
                 </div>
                 <hr>
@@ -39,15 +40,6 @@ var app = app || {};
             if (confirmed) {
                 app.Book.delete(book_id).then(renderThings)
             }
-        })
-
-        $('#book-list-page').on('click', '.show-book', (event) => {
-            const book_id = $(event.target).data('book_id')
-            page('/book-detail-page/' + book_id)
-        })
-        $('#book-list-page').on('click', '.update-book', (event) => {
-            const book_id = $(event.target).data('book_id')
-            page('/book-edit-page/' + book_id)
         })
 
         app.Book.fetchAll().then(() => {

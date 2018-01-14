@@ -1,3 +1,5 @@
+'use strict';
+
 var app = app || {};
 (module => {
 
@@ -17,7 +19,7 @@ var app = app || {};
             </div>
             <div>
             <label for="isbn">ISBN:</label>
-            <input type="text" id="email" placeholder="Enter ISBN" name="isbn" value="{{isbn}}">
+            <input type="text" id="isbn" placeholder="Enter ISBN" name="isbn" value="{{isbn}}">
             </div>
             <div >
             <label for="image_url">Image URL:</label>
@@ -47,7 +49,7 @@ var app = app || {};
                 author:     $('#author').val(),
                 title:      $('#title').val(),
                 image_url:  $('#image_url').val(),
-                description:$('#descript').val(),
+                description:$('#description').val(),
                 isbn:       $('#isbn').val()
             }
             

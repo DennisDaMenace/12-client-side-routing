@@ -1,6 +1,6 @@
 // NOTE: these routes will work just fine running locally
 // But when you start remotely check out routes-remote.js
-
+'use strict';
 
 // all route changes should hide page containers
 page('/*', (ctx, next) => {
