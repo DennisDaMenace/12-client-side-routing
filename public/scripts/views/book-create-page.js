@@ -6,7 +6,7 @@ var app = app || {};
     const bookCreatePage = {};
 
     const markup = `
-    <div>
+    <div id="checkValidation">
         <form>
             <div>
             <label for="titles">Title:</label>
@@ -53,7 +53,14 @@ var app = app || {};
         console.log('fields',fields)
         app.Book.create(fields);
     })
-
+    if ('yes' === localStorage.getItem('validated')) {
+        console.log('Login Success')
+        localStorage.setItem('validated', 'yes')
+        $('#checkValidation').show();
+      } else {
+        $('#checkValidation').hide();
+          localStorage.setItem('validated', 'no')
+      }
     }
 
     module.bookCreatePage = bookCreatePage
